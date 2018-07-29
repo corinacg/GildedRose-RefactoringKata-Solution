@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace csharp
 {
@@ -12,6 +13,13 @@ namespace csharp
 
         public void UpdateQuality()
         {
+            var updatableItems = Items.Select(i => UpdatableItemFactory.CreateFromItem(i)).Where(i => i != null);
+
+            foreach(var item in updatableItems)
+            {
+                item.Update();
+            }
+
             for (var i = 0; i < Items.Count; i++)
             {
                 if (Items[i].Name != "Aged Brie" && Items[i].Name != "Backstage passes to a TAFKAL80ETC concert")

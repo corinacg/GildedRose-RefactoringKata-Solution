@@ -8,6 +8,10 @@
             {
                 return new SulfurasItem(item);
             }
+            else if(item.Name == "Aged Brie")
+            {
+                return new AgedBrieItem(item);
+            }
             return null;
         }
     }

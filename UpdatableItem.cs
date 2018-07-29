@@ -7,7 +7,7 @@
             Item = item;
         }
 
-        public Item Item { get; }
+        protected Item Item { get; set; }
 
         public void Update()
         {

@@ -10,7 +10,7 @@
             }
             else if(item.Name == "Aged Brie")
             {
-                return new AgedBrieItem(item);
+                return AgedBrieItemFactory.CreateFromItem(item);
             }
             else if (item.Name.Contains("Backstage passes"))
             {

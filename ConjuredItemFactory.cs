@@ -11,14 +11,12 @@ namespace csharp
                 {
                     new QualityUpdateConfiguration()
                     {
-                        QualityUpdateSpeed = -2,
-                        QualityUpdateLimit = 0,
+                        QualityUpdateFunc = x => Math.Max(0, x - 2),
                         MinimumAppliableSellInStartingPoint = 0
                     },
                     new QualityUpdateConfiguration()
                     {
-                        QualityUpdateSpeed = -4,
-                        QualityUpdateLimit = 0,
+                        QualityUpdateFunc = x => Math.Max(0, x - 4),
                         MinimumAppliableSellInStartingPoint = int.MinValue
                     }
                 },

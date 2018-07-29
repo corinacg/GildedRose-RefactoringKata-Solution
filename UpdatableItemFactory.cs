@@ -14,7 +14,7 @@
             }
             else if (item.Name.Contains("Backstage passes"))
             {
-                return new BackstagePassItem(item);
+                return BackstagePassItemFactory.CreateFromItem(item);
             }
             else if(item.Name.Contains("Conjured"))
             {

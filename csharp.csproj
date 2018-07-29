@@ -63,7 +63,7 @@
   <ItemGroup>
     <Compile Include="AgedBrieItem.cs" />
     <Compile Include="ApprovalTest.cs" />
-    <Compile Include="BackstagePassItem.cs" />
+    <Compile Include="BackstagePassItemFactory.cs" />
     <Compile Include="ConfigurableUpdatableItem.cs" />
     <Compile Include="ConjuredItemFactory.cs" />
     <Compile Include="GildedRose.cs" />

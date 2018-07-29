@@ -6,8 +6,7 @@ namespace csharp
 {
     class QualityUpdateConfiguration
     {
-        public int QualityUpdateSpeed { get; set; }
-        public int QualityUpdateLimit { get; set; }
+        public Func<int, int> QualityUpdateFunc { get; set; }
         public int MinimumAppliableSellInStartingPoint { get; set; }
     }
 
@@ -24,15 +23,7 @@ namespace csharp
         protected override void UpdateQuality()
         {
             var updateConfiguration = this.qualityUpdateConfigurationsIntervals.First(i => Item.SellIn >= i.MinimumAppliableSellInStartingPoint);
-            var ensureQualityLimitFunc = GetEnsureQualityLimitFunc(updateConfiguration);
-            Item.Quality = ensureQualityLimitFunc(Item.Quality + updateConfiguration.QualityUpdateSpeed, updateConfiguration.QualityUpdateLimit);
-        }
-
-        private Func<int, int, int> GetEnsureQualityLimitFunc(QualityUpdateConfiguration qualityUpdateConfiguration)
-        {
-            return qualityUpdateConfiguration.QualityUpdateSpeed > 0
-                ? new Func<int, int, int>((int x, int y) => Math.Min(x, y))
-                : (int x, int y) => Math.Max(x, y);
+            Item.Quality = updateConfiguration.QualityUpdateFunc(Item.Quality);
         }
 
         protected override void UpdateSellIn()

@@ -1,4 +1,6 @@
-﻿namespace csharp
+﻿using System;
+
+namespace csharp
 {
     class RegularItemFactory
     {
@@ -9,14 +11,12 @@
                 {
                     new QualityUpdateConfiguration()
                     {
-                        QualityUpdateSpeed = -1,
-                        QualityUpdateLimit = 0,
+                        QualityUpdateFunc = x => Math.Max(0, x - 1),
                         MinimumAppliableSellInStartingPoint = 0
                     },
                     new QualityUpdateConfiguration()
                     {
-                        QualityUpdateSpeed = -2,
-                        QualityUpdateLimit = 0,
+                        QualityUpdateFunc = x => Math.Max(0, x - 2),
                         MinimumAppliableSellInStartingPoint = int.MinValue
                     }
                 },

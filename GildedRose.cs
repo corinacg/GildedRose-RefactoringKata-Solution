@@ -28,7 +28,6 @@ namespace csharp
                 }
             }
 
-
             foreach (var item in updatableItems)
             {
                 item.Update();
@@ -36,56 +35,21 @@ namespace csharp
 
             for (var i = 0; i < itemsNotUpdatable.Count; i++)
             {
-                if (itemsNotUpdatable[i].Name != "Backstage passes to a TAFKAL80ETC concert")
-                {
-                    if (itemsNotUpdatable[i].Quality > 0)
-                    {
-                        itemsNotUpdatable[i].Quality = itemsNotUpdatable[i].Quality - 1;
-                    }
-                }
-                else
-                {
-                    if (itemsNotUpdatable[i].Quality < 50)
-                    {
-                        itemsNotUpdatable[i].Quality = itemsNotUpdatable[i].Quality + 1;
 
-                        if (itemsNotUpdatable[i].Name == "Backstage passes to a TAFKAL80ETC concert")
-                        {
-                            if (itemsNotUpdatable[i].SellIn < 11)
-                            {
-                                if (itemsNotUpdatable[i].Quality < 50)
-                                {
-                                    itemsNotUpdatable[i].Quality = itemsNotUpdatable[i].Quality + 1;
-                                }
-                            }
-
-                            if (itemsNotUpdatable[i].SellIn < 6)
-                            {
-                                if (itemsNotUpdatable[i].Quality < 50)
-                                {
-                                    itemsNotUpdatable[i].Quality = itemsNotUpdatable[i].Quality + 1;
-                                }
-                            }
-                        }
-                    }
+                if (itemsNotUpdatable[i].Quality > 0)
+                {
+                    itemsNotUpdatable[i].Quality = itemsNotUpdatable[i].Quality - 1;
                 }
 
                 itemsNotUpdatable[i].SellIn = itemsNotUpdatable[i].SellIn - 1;
 
                 if (itemsNotUpdatable[i].SellIn < 0)
                 {
+                    if (itemsNotUpdatable[i].Quality > 0)
+                    {
+                        itemsNotUpdatable[i].Quality = itemsNotUpdatable[i].Quality - 1;
+                    }
 
-                    if (itemsNotUpdatable[i].Name != "Backstage passes to a TAFKAL80ETC concert")
-                    {
-                        if (itemsNotUpdatable[i].Quality > 0)
-                        {
-                            itemsNotUpdatable[i].Quality = itemsNotUpdatable[i].Quality - 1;
-                        }
-                    }
-                    else
-                    {
-                        itemsNotUpdatable[i].Quality = itemsNotUpdatable[i].Quality - itemsNotUpdatable[i].Quality;
-                    }
                 }
             }
         }

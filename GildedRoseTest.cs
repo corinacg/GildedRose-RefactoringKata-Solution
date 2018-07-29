@@ -158,5 +158,32 @@ namespace csharp
             app.UpdateQuality();
             Assert.AreEqual(0, Items[0].Quality);
         }
+
+        [Test]
+        public void UpdateQuality_OneBackstagePassItem_QualityDoesNotExceed50()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 15, Quality = 50 } };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            Assert.AreEqual(50, Items[0].Quality);
+        }
+
+        [Test]
+        public void UpdateQuality_OneBackstagePassItemWithLessThan10DaysAhead_QualityIncreasesButDoesNotExceed50()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 7, Quality = 49 } };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            Assert.AreEqual(50, Items[0].Quality);
+        }
+
+        [Test]
+        public void UpdateQuality_OneBackstagePassItemWithLessThan5DaysAhead_QualityIncreasesButDoesNotExceed50()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = 3, Quality = 49 } };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            Assert.AreEqual(50, Items[0].Quality);
+        }
     }
 }

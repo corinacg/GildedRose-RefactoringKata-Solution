@@ -20,7 +20,7 @@
             {
                 return new ConjuredItem(item);
             }
-            return new RegularItem(item);
+            return RegularItemFactory.CreateFromItem(item);
         }
     }
 }

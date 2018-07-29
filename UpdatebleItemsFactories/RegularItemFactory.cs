@@ -1,8 +1,9 @@
 ﻿using System;
+using csharp.UpdatableItems;
 
-namespace csharp
+namespace csharp.UpdatebleItemsFactories
 {
-    class ConjuredItemFactory
+    class RegularItemFactory
     {
         public static UpdatableItem CreateFromItem(Item item)
         {
@@ -11,12 +12,12 @@ namespace csharp
                 {
                     new QualityUpdateConfiguration()
                     {
-                        QualityUpdateFunc = x => Math.Max(0, x - 2),
+                        QualityUpdateFunc = x => Math.Max(0, x - 1),
                         MinimumAppliableSellInStartingPoint = 0
                     },
                     new QualityUpdateConfiguration()
                     {
-                        QualityUpdateFunc = x => Math.Max(0, x - 4),
+                        QualityUpdateFunc = x => Math.Max(0, x - 2),
                         MinimumAppliableSellInStartingPoint = int.MinValue
                     }
                 },

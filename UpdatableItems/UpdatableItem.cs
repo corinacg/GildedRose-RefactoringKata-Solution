@@ -1,4 +1,4 @@
-﻿namespace csharp
+﻿namespace csharp.UpdatableItems
 {
     abstract class UpdatableItem
     {

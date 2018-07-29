@@ -1,6 +1,6 @@
-﻿using System;
+﻿using csharp.UpdatableItems;
 
-namespace csharp
+namespace csharp.UpdatebleItemsFactories
 {
     class SulfurasItemFactory
     {

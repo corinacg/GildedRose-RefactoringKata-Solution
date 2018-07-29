@@ -1,4 +1,6 @@
-﻿namespace csharp
+﻿using csharp.UpdatableItems;
+
+namespace csharp.UpdatebleItemsFactories
 {
     static class UpdatableItemFactory
     {

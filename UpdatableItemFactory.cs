@@ -18,7 +18,7 @@
             }
             else if(item.Name.Contains("Conjured"))
             {
-                return new ConjuredItem(item);
+                return ConjuredItemFactory.CreateFromItem(item);
             }
             return RegularItemFactory.CreateFromItem(item);
         }

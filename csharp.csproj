@@ -65,7 +65,7 @@
     <Compile Include="ApprovalTest.cs" />
     <Compile Include="BackstagePassItem.cs" />
     <Compile Include="ConfigurableUpdatableItem.cs" />
-    <Compile Include="ConjuredItem.cs" />
+    <Compile Include="ConjuredItemFactory.cs" />
     <Compile Include="GildedRose.cs" />
     <Compile Include="GildedRoseTest.cs" />
     <Compile Include="Item.cs" />

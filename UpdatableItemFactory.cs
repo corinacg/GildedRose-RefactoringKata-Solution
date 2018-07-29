@@ -16,7 +16,7 @@
             {
                 return new BackstagePassItem(item);
             }
-            return null;
+            return new RegularItem(item);
         }
     }
 }

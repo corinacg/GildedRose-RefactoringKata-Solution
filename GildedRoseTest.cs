@@ -185,5 +185,60 @@ namespace csharp
             app.UpdateQuality();
             Assert.AreEqual(50, Items[0].Quality);
         }
+
+        [Test]
+        public void UpdateQuality_OneConjuredItem_SellInDecreases()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 0, Quality = 0 } };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            Assert.AreEqual(-1, Items[0].SellIn);
+        }
+
+        [Test]
+        public void UpdateQuality_OneConjuredItem_QualityDecreasesByTwo()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 10, Quality = 10 } };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            Assert.AreEqual(8, Items[0].Quality);
+        }
+
+        [Test]
+        public void UpdateQuality_OneOneConjuredItemWithQuality0_QualityDoesNotBecomeNegative()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 0, Quality = 0 } };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            Assert.AreEqual(0, Items[0].Quality);
+        }
+
+        [Test]
+        public void UpdateQuality_OneOneConjuredItemWithQuality1_QualityDecreasesButDoesNotBecomeNegative()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 0, Quality = 1 } };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            Assert.AreEqual(0, Items[0].Quality);
+        }
+
+        [Test]
+        public void UpdateQuality_OneOneConjuredItemWithSellByDatePassed_QualityDecreasesByFour()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 0, Quality = 30 } };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            Assert.AreEqual(26, Items[0].Quality);
+        }
+
+        [Test]
+        public void UpdateQuality_OneOneConjuredItemWithSellByDatePassed_QualityDoesNotBecomeNegative()
+        {
+            IList<Item> Items = new List<Item> { new Item { Name = "Conjured Mana Cake", SellIn = 0, Quality = 3 } };
+            GildedRose app = new GildedRose(Items);
+            app.UpdateQuality();
+            Assert.AreEqual(0, Items[0].Quality);
+        }
+
     }
 }

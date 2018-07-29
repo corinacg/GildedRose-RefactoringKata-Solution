@@ -16,6 +16,10 @@
             {
                 return new BackstagePassItem(item);
             }
+            else if(item.Name.Contains("Conjured"))
+            {
+                return new ConjuredItem(item);
+            }
             return new RegularItem(item);
         }
     }

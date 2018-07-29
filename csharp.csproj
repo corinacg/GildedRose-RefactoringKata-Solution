@@ -64,6 +64,7 @@
     <Compile Include="AgedBrieItem.cs" />
     <Compile Include="ApprovalTest.cs" />
     <Compile Include="BackstagePassItem.cs" />
+    <Compile Include="ConjuredItem.cs" />
     <Compile Include="GildedRose.cs" />
     <Compile Include="GildedRoseTest.cs" />
     <Compile Include="Item.cs" />

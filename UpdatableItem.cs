@@ -1,8 +1,8 @@
 ﻿namespace csharp
 {
-    abstract class UpdatebleItem
+    abstract class UpdatableItem
     {
-        public UpdatebleItem(Item item)
+        public UpdatableItem(Item item)
         {
             Item = item;
         }

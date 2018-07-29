@@ -2,7 +2,7 @@
 {
     static class UpdatableItemFactory
     {
-        public static UpdatebleItem CreateFromItem(Item item)
+        public static UpdatableItem CreateFromItem(Item item)
         {
             if(item.Name == "Sulfuras, Hand of Ragnaros")
             {

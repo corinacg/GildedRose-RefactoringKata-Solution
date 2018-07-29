@@ -2,7 +2,7 @@
 
 namespace csharp
 {
-    class SulfurasItem : UpdatebleItem
+    class SulfurasItem : UpdatableItem
     {
         public SulfurasItem(Item item) : base(item)
         {

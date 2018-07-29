@@ -6,7 +6,7 @@
         {
             if(item.Name == "Sulfuras, Hand of Ragnaros")
             {
-                return new SulfurasItem(item);
+                return SulfurasItemFactory.CreateFromItem(item);
             }
             else if(item.Name == "Aged Brie")
             {

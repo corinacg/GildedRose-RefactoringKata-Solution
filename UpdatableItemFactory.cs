@@ -12,6 +12,10 @@
             {
                 return new AgedBrieItem(item);
             }
+            else if (item.Name.Contains("Backstage passes"))
+            {
+                return new BackstagePassItem(item);
+            }
             return null;
         }
     }
